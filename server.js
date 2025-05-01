@@ -9,42 +9,42 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-console.log('MongoDB URI:', process.env.MONGODB_URI);
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-//  serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
-})
-.then(() => {
-  console.log('Connected to MongoDB');
-  app.listen(5000, () => {
-    console.log('Server running on port 5000');
-  });
-
-}
-)
-.catch(err => {
-  console.error("MongoDB error",err)
-}
-)
-
-
-
-// mongoose.connect(process.env.MONGODB_URI)
+// console.log('MongoDB URI:', process.env.MONGODB_URI);
+// mongoose.connect(process.env.MONGODB_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// //  serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+// })
 // .then(() => {
 //   console.log('Connected to MongoDB');
-// })
-// .catch(err => { 
+//   app.listen(5000, () => {
+//     console.log('Server running on port 5000');
+//   });
+
+// }
+// )
+// .catch(err => {
 //   console.error("MongoDB error",err)
-// })
+// }
+// )
 
-const contactSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  message: String,
-});
 
-const Contact = mongoose.model('Contact', contactSchema);
+
+// // mongoose.connect(process.env.MONGODB_URI)
+// // .then(() => {
+// //   console.log('Connected to MongoDB');
+// // })
+// // .catch(err => { 
+// //   console.error("MongoDB error",err)
+// // })
+
+// const contactSchema = new mongoose.Schema({
+//   name: String,
+//   email: String,
+//   message: String,
+// });
+
+// const Contact = mongoose.model('Contact', contactSchema);
 
 
 // Contact API endpoint
